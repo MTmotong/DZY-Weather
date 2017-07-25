@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private FragmentTransaction fragmentTransaction;
     private ChooseAreaFragment chooseAreaFragment;
 
-    DrawerLayout mDrawLayout;
+    private DrawerLayout mDrawLayout;
 
 
     @Override
@@ -34,41 +34,49 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
 
-        //侧边栏
-        NavigationView navigationView = (NavigationView) findViewById(R.id.left_drawer);
-        navigationView.setCheckedItem(R.id.nav_addcity);
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(MenuItem item) {
-                fragmentTransaction = fragmentManager.beginTransaction();
-                hideAllFragment(fragmentTransaction);
-                switch (item.getItemId()) {
-                    case R.id.nav_home:
-                        mDrawLayout.openDrawer(GravityCompat.START);
-                        break;
-                    case R.id.nav_addcity:
-                        if (chooseAreaFragment == null) {
-                            chooseAreaFragment = new ChooseAreaFragment();
-                            fragmentTransaction.add(R.id.choose_area_fragment, chooseAreaFragment);
-                        }
-                        Toast.makeText(MainActivity.this, "dianle ", Toast.LENGTH_SHORT).show();
-                }
-                fragmentTransaction.commit();
-                mDrawLayout.closeDrawers();
-                return true;
-            }
-        });
-    }
 
-    private void initFragment() {
-        fragmentManager = getSupportFragmentManager();
-        fragmentTransaction = fragmentManager.beginTransaction();
-        hideAllFragment(fragmentTransaction);
-    }
-    private void hideAllFragment(FragmentTransaction fragmentTransaction) {
-//        if(weathPage != null) {
-//            fragmentTransaction.hide(weatherPage);
+//        mDrawLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+//        ActionBar actionBar = getSupportActionBar();
+//        if(actionBar != null) {
+//            actionBar.setDisplayHomeAsUpEnabled(true);
+//            actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
 //        }
+
+//        //侧边栏
+//        NavigationView navigationView = (NavigationView) findViewById(R.id.left_drawer);
+//        navigationView.setCheckedItem(R.id.nav_addcity);
+//        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(MenuItem item) {
+//                fragmentTransaction = fragmentManager.beginTransaction();
+//                hideAllFragment(fragmentTransaction);
+//                switch (item.getItemId()) {
+//                    case R.id.nav_home:
+//                        mDrawLayout.openDrawer(GravityCompat.START);
+//                        break;
+//                    case R.id.nav_addcity:
+//                        if (chooseAreaFragment == null) {
+//                            chooseAreaFragment = new ChooseAreaFragment();
+//                            fragmentTransaction.add(R.id.choose_area_fragment, chooseAreaFragment);
+//                        }
+//                        Toast.makeText(MainActivity.this, "dianle ", Toast.LENGTH_SHORT).show();
+//                }
+//                fragmentTransaction.commit();
+//                mDrawLayout.closeDrawers();
+//                return true;
+//            }
+//        });
     }
+//
+//    private void initFragment() {
+//        fragmentManager = getSupportFragmentManager();
+//        fragmentTransaction = fragmentManager.beginTransaction();
+//        hideAllFragment(fragmentTransaction);
+//    }
+//    private void hideAllFragment(FragmentTransaction fragmentTransaction) {
+////        if(weathPage != null) {
+////            fragmentTransaction.hide(weatherPage);
+////        }
+//    }
 
 }

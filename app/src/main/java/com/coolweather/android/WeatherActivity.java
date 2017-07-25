@@ -6,11 +6,16 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -42,6 +47,8 @@ public class WeatherActivity extends AppCompatActivity {
 
     private Button navButton;
 
+    private Button navDrawerButton;
+
     private TextView titleCity;
 
     private TextView titleUpdateTime;
@@ -65,6 +72,12 @@ public class WeatherActivity extends AppCompatActivity {
     private ImageView bingPicImg;
 
     private String mWeatherId;
+
+    private FragmentManager fragmentManager;
+    private FragmentTransaction fragmentTransaction;
+    private ChooseAreaFragment chooseAreaFragment;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,6 +106,7 @@ public class WeatherActivity extends AppCompatActivity {
         swipeRefresh.setColorSchemeResources(R.color.colorPrimary);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navButton = (Button) findViewById(R.id.nav_button);
+        navDrawerButton = (Button) findViewById(R.id.nav_menu);
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         String weatherString = prefs.getString("weather", null);
         if (weatherString != null) {
@@ -115,7 +129,7 @@ public class WeatherActivity extends AppCompatActivity {
         navButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                drawerLayout.openDrawer(GravityCompat.START);
+                drawerLayout.openDrawer(GravityCompat.END);
             }
         });
         String bingPic = prefs.getString("bing_pic", null);
@@ -124,7 +138,61 @@ public class WeatherActivity extends AppCompatActivity {
         } else {
             loadBingPic();
         }
+
+        navDrawerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
+        });
+
+
+        //左边侧边栏
+        NavigationView navigationView = (NavigationView) findViewById(R.id.left_drawer);
+        //navigationView.setCheckedItem(R.id.nav_home);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                //fragmentTransaction = fragmentManager.beginTransaction();
+                //hideAllFragment(fragmentTransaction);
+                switch (item.getItemId()) {
+                    case R.id.nav_home:
+                        drawerLayout.openDrawer(GravityCompat.START);
+                        break;
+                    case R.id.nav_calendar:
+                        Toast.makeText(WeatherActivity.this, "dianle ", Toast.LENGTH_SHORT).show();
+
+                        break;
+                    case R.id.nav_memo:
+                        break;
+                    case R.id.nav_share:
+                        break;
+                    case R.id.nav_location:
+                        break;
+                }
+                //fragmentTransaction.commit();
+                drawerLayout.closeDrawers();
+                return true;
+            }
+        });
+
+
     }
+
+
+
+
+//    private void initFragment() {
+//        fragmentManager = getSupportFragmentManager();
+//        fragmentTransaction = fragmentManager.beginTransaction();
+//        hideAllFragment(fragmentTransaction);
+//    }
+//    private void hideAllFragment(FragmentTransaction fragmentTransaction) {
+//        if(weathPage != null) {
+//            fragmentTransaction.hide(weatherPage);
+//        }
+//    }
+
 
     /**
      * 根据天气id请求城市天气信息。
