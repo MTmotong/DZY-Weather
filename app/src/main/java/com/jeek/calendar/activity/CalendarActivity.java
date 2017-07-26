@@ -38,7 +38,6 @@ public class CalendarActivity extends BaseActivity {
     public static int ADD_EVENT_SET_CODE = 1;
     public static String ADD_EVENT_SET_ACTION = "action.add.event.set";
 
-//    private DrawerLayout dlMain;
     private LinearLayout llTitleDate;
     private TextView tvTitleMonth, tvTitleDay, tvTitle;
     private RecyclerView rvMenuEventSetList;
