@@ -18,12 +18,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".WeatherActivity" />
 
         <service
             android:name=".service.AutoUpdateService"
             android:enabled="true"
             android:exported="true" />
+
+        <activity android:name="com.jeek.calendar.activity.CalendarActivity"></activity>
+        <activity android:name="com.jeek.calendar.activity.ScheduleDetailActivity" />
+        <activity android:name="com.jeek.calendar.activity.AddEventSetActivity" />
     </application>
 
 </manifest>

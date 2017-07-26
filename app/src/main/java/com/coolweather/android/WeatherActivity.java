@@ -30,6 +30,7 @@ import com.coolweather.android.gson.Weather;
 import com.coolweather.android.service.AutoUpdateService;
 import com.coolweather.android.util.HttpUtil;
 import com.coolweather.android.util.Utility;
+import com.jeek.calendar.activity.CalendarActivity;
 
 import java.io.IOException;
 
@@ -160,10 +161,13 @@ public class WeatherActivity extends AppCompatActivity {
                         drawerLayout.openDrawer(GravityCompat.START);
                         break;
                     case R.id.nav_calendar:
-                        Toast.makeText(WeatherActivity.this, "dianle ", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(WeatherActivity.this, CalendarActivity.class);
+                        startActivity(intent);
 
                         break;
                     case R.id.nav_memo:
+                        Toast.makeText(WeatherActivity.this, "dianle ", Toast.LENGTH_SHORT).show();
+
                         break;
                     case R.id.nav_share:
                         break;
