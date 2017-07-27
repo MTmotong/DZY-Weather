@@ -9,17 +9,18 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:background="@drawable/ic_home"
-        android:layout_alignBottom="@+id/title_update_time"
-        android:layout_toStartOf="@+id/title_update_time"
-        android:layout_toLeftOf="@+id/title_update_time" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/nav_menu"
+        android:layout_alignTop="@+id/nav_menu" />
     <Button
         android:id="@+id/nav_menu"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:background="@drawable/ic_menu"
         android:gravity="left"
-        android:layout_marginLeft="24dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
         android:layout_alignBottom="@+id/title_update_time"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />

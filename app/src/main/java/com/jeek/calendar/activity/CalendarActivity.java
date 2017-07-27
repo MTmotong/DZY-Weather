@@ -40,11 +40,6 @@ public class CalendarActivity extends BaseActivity {
 
     private LinearLayout llTitleDate;
     private TextView tvTitleMonth, tvTitleDay, tvTitle;
-<<<<<<< HEAD
-    //private RecyclerView rvMenuEventSetList;
-=======
-    private RecyclerView rvMenuEventSetList;
->>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
 
     private EventSetAdapter mEventSetAdapter;
     private List<EventSet> mEventSets;
@@ -60,20 +55,10 @@ public class CalendarActivity extends BaseActivity {
     @Override
     protected void bindView() {
         setContentView(R.layout.activity_main_calendar);
-//        dlMain = searchViewById(R.id.dlMain);
         llTitleDate = searchViewById(R.id.llTitleDate);
         tvTitleMonth = searchViewById(R.id.tvTitleMonth);
         tvTitleDay = searchViewById(R.id.tvTitleDay);
         tvTitle = searchViewById(R.id.tvTitle);
-<<<<<<< HEAD
-        //rvMenuEventSetList = searchViewById(R.id.rvMenuEventSetList);
-=======
-        rvMenuEventSetList = searchViewById(R.id.rvMenuEventSetList);
->>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
-//        searchViewById(R.id.ivMainMenu).setOnClickListener(this);
-//        searchViewById(R.id.llMenuSchedule).setOnClickListener(this);
-//        searchViewById(R.id.llMenuNoCategory).setOnClickListener(this);
-//        searchViewById(R.id.tvMenuAddEventSet).setOnClickListener(this);
         initUi();
         initEventSetList();
         gotoScheduleFragment();
@@ -94,25 +79,13 @@ public class CalendarActivity extends BaseActivity {
         mEventSets = new ArrayList<>();
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(LinearLayoutManager.VERTICAL);
-<<<<<<< HEAD
-//        rvMenuEventSetList.setLayoutManager(manager);
         DefaultItemAnimator itemAnimator = new DefaultItemAnimator();
         itemAnimator.setSupportsChangeAnimations(false);
-//        rvMenuEventSetList.setItemAnimator(itemAnimator);
         mEventSetAdapter = new EventSetAdapter(this, mEventSets);
-//        rvMenuEventSetList.setAdapter(mEventSetAdapter);
-=======
-        rvMenuEventSetList.setLayoutManager(manager);
-        DefaultItemAnimator itemAnimator = new DefaultItemAnimator();
-        itemAnimator.setSupportsChangeAnimations(false);
-        rvMenuEventSetList.setItemAnimator(itemAnimator);
-        mEventSetAdapter = new EventSetAdapter(this, mEventSets);
-        rvMenuEventSetList.setAdapter(mEventSetAdapter);
->>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
+
     }
 
     private void initUi() {
-//        dlMain.setScrimColor(Color.TRANSPARENT);
         mMonthText = getResources().getStringArray(R.array.calendar_month);
         llTitleDate.setVisibility(View.VISIBLE);
         tvTitle.setVisibility(View.GONE);
@@ -164,25 +137,6 @@ public class CalendarActivity extends BaseActivity {
         mCurrentSelectDay = day;
     }
 
-//    @Override
-//    public void onClick(View v) {
-//        switch (v.getId()) {
-//            case R.id.ivMainMenu:
-//                dlMain.openDrawer(Gravity.START);
-//                break;
-//            case R.id.llMenuSchedule:
-//                gotoScheduleFragment();
-//                break;
-//            case R.id.llMenuNoCategory:
-//                mCurrentEventSet = new EventSet();
-//                mCurrentEventSet.setName(getString(R.string.menu_no_category));
-//                gotoEventSetFragment(mCurrentEventSet);
-//                break;
-//            case R.id.tvMenuAddEventSet:
-//                gotoAddEventSetActivity();
-//                break;
-//        }
-//    }
 
     private void gotoScheduleFragment() {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
@@ -197,7 +151,6 @@ public class CalendarActivity extends BaseActivity {
         ft.commit();
         llTitleDate.setVisibility(View.VISIBLE);
         tvTitle.setVisibility(View.GONE);
-        //dlMain.closeDrawer(Gravity.START);
     }
 
     public void gotoEventSetFragment(EventSet eventSet) {
@@ -213,7 +166,6 @@ public class CalendarActivity extends BaseActivity {
         ft.show(mEventSetFragment);
         ft.commit();
         resetTitleText(eventSet.getName());
-//        dlMain.closeDrawer(Gravity.START);
         mCurrentEventSet = eventSet;
     }
 
