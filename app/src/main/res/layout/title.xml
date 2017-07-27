@@ -2,46 +2,27 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-<<<<<<< HEAD
     android:layout_height="wrap_content"
     android:minHeight="?attr/actionBarSize">
-=======
-    android:layout_height="?attr/actionBarSize">
->>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
-
     <Button
         android:id="@+id/nav_button"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:background="@drawable/ic_home"
-<<<<<<< HEAD
         android:layout_alignBottom="@+id/title_update_time"
         android:layout_toStartOf="@+id/title_update_time"
         android:layout_toLeftOf="@+id/title_update_time" />
-=======
-        android:layout_centerVertical="true"
-        android:layout_alignRight="@+id/title_update_time"
-        android:layout_alignEnd="@+id/title_update_time" />
->>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
     <Button
         android:id="@+id/nav_menu"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:background="@drawable/ic_menu"
         android:gravity="left"
-<<<<<<< HEAD
         android:layout_marginLeft="24dp"
         android:layout_marginStart="24dp"
         android:layout_alignBottom="@+id/title_update_time"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
-=======
-        android:layout_alignTop="@+id/nav_button"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="14dp"
-        android:layout_marginStart="14dp" />
->>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
 
     <TextView
         android:id="@+id/title_city"
@@ -57,14 +38,8 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="10dp"
         android:layout_alignParentRight="true"
-<<<<<<< HEAD
         android:textColor="#fff"
         android:textSize="16sp"
         android:layout_below="@+id/title_city" />
-=======
-        android:layout_centerVertical="true"
-        android:textColor="#fff"
-        android:textSize="16sp"/>
->>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
 
 </RelativeLayout>
