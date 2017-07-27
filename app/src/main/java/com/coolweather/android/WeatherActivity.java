@@ -3,7 +3,10 @@ package com.coolweather.android;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+<<<<<<< HEAD
 import android.net.Uri;
+=======
+>>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -15,7 +18,10 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+<<<<<<< HEAD
 import android.util.Log;
+=======
+>>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,7 +33,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+<<<<<<< HEAD
 import com.coolweather.android.gson.Basic;
+=======
+>>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
 import com.coolweather.android.gson.Forecast;
 import com.coolweather.android.gson.Weather;
 import com.coolweather.android.service.AutoUpdateService;
@@ -77,15 +86,26 @@ public class WeatherActivity extends AppCompatActivity {
 
     private String mWeatherId;
 
+<<<<<<< HEAD
     private Weather weather;
 
     private static String weather_information;
+=======
+    private FragmentManager fragmentManager;
+    private FragmentTransaction fragmentTransaction;
+    private ChooseAreaFragment chooseAreaFragment;
+
+
+>>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+<<<<<<< HEAD
         Log.d("WeatherActivity", "onCreate: -1");
 
+=======
+>>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
         if (Build.VERSION.SDK_INT >= 21) {
             View decorView = getWindow().getDecorView();
             decorView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
@@ -93,8 +113,11 @@ public class WeatherActivity extends AppCompatActivity {
             getWindow().setStatusBarColor(Color.TRANSPARENT);
         }
         setContentView(R.layout.activity_weather);
+<<<<<<< HEAD
         Log.d("WeatherActivity", "onCreate: 0");
 
+=======
+>>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
         // 初始化各控件
         bingPicImg = (ImageView) findViewById(R.id.bing_pic_img);
         weatherLayout = (ScrollView) findViewById(R.id.weather_layout);
@@ -114,23 +137,34 @@ public class WeatherActivity extends AppCompatActivity {
         navButton = (Button) findViewById(R.id.nav_button);
         navDrawerButton = (Button) findViewById(R.id.nav_menu);
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+<<<<<<< HEAD
         final String weatherString = prefs.getString("weather", null);
         Log.d("WeatherActivity", "onCreate: 1");
         if (weatherString != null) {
             Log.d("WeatherActivity", "onCreate: 2");
 
+=======
+        String weatherString = prefs.getString("weather", null);
+        if (weatherString != null) {
+>>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
             // 有缓存时直接解析天气数据
             Weather weather = Utility.handleWeatherResponse(weatherString);
             mWeatherId = weather.basic.weatherId;
             showWeatherInfo(weather);
         } else {
+<<<<<<< HEAD
             Log.d("WeatherActivity", "onCreate: 3");
+=======
+>>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
             // 无缓存时去服务器查询天气
             mWeatherId = getIntent().getStringExtra("weather_id");
             weatherLayout.setVisibility(View.INVISIBLE);
             requestWeather(mWeatherId);
         }
+<<<<<<< HEAD
         Log.d("WeatherActivity", "onCreate: 4");
+=======
+>>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
         swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -180,8 +214,11 @@ public class WeatherActivity extends AppCompatActivity {
 
                         break;
                     case R.id.nav_share:
+<<<<<<< HEAD
                         sendSMS(weather_information);
 
+=======
+>>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
                         break;
                     case R.id.nav_location:
                         break;
@@ -195,12 +232,16 @@ public class WeatherActivity extends AppCompatActivity {
 
     }
 
+<<<<<<< HEAD
     private void sendSMS(String smsBody) {
         Uri smsToUri = Uri.parse("smsto:");
         Intent intent = new Intent(Intent.ACTION_SENDTO, smsToUri);
         intent.putExtra("sms_body", smsBody);
         startActivity(intent);
     }
+=======
+
+>>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
 
 
 //    private void initFragment() {
@@ -297,7 +338,10 @@ public class WeatherActivity extends AppCompatActivity {
         degreeText.setText(degree);
         weatherInfoText.setText(weatherInfo);
         forecastLayout.removeAllViews();
+<<<<<<< HEAD
         weather_information = cityName + "现在温度是" + degree + "，" + weatherInfo + "，最高气温" + weather.forecastList.get(0).temperature.max + "，最低气温" + weather.forecastList.get(0).temperature.min+"。";
+=======
+>>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
         for (Forecast forecast : weather.forecastList) {
             View view = LayoutInflater.from(this).inflate(R.layout.forecast_item, forecastLayout, false);
             TextView dateText = (TextView) view.findViewById(R.id.date_text);

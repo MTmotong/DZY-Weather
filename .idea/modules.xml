@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/DZY-Weather-master-2.iml" filepath="$PROJECT_DIR$/DZY-Weather-master-2.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/DZY-Weather-master.iml" filepath="$PROJECT_DIR$/DZY-Weather-master.iml" />
+>>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

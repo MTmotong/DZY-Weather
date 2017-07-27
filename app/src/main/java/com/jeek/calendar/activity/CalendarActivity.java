@@ -40,7 +40,11 @@ public class CalendarActivity extends BaseActivity {
 
     private LinearLayout llTitleDate;
     private TextView tvTitleMonth, tvTitleDay, tvTitle;
+<<<<<<< HEAD
     //private RecyclerView rvMenuEventSetList;
+=======
+    private RecyclerView rvMenuEventSetList;
+>>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
 
     private EventSetAdapter mEventSetAdapter;
     private List<EventSet> mEventSets;
@@ -61,7 +65,11 @@ public class CalendarActivity extends BaseActivity {
         tvTitleMonth = searchViewById(R.id.tvTitleMonth);
         tvTitleDay = searchViewById(R.id.tvTitleDay);
         tvTitle = searchViewById(R.id.tvTitle);
+<<<<<<< HEAD
         //rvMenuEventSetList = searchViewById(R.id.rvMenuEventSetList);
+=======
+        rvMenuEventSetList = searchViewById(R.id.rvMenuEventSetList);
+>>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
 //        searchViewById(R.id.ivMainMenu).setOnClickListener(this);
 //        searchViewById(R.id.llMenuSchedule).setOnClickListener(this);
 //        searchViewById(R.id.llMenuNoCategory).setOnClickListener(this);
@@ -86,12 +94,21 @@ public class CalendarActivity extends BaseActivity {
         mEventSets = new ArrayList<>();
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(LinearLayoutManager.VERTICAL);
+<<<<<<< HEAD
 //        rvMenuEventSetList.setLayoutManager(manager);
         DefaultItemAnimator itemAnimator = new DefaultItemAnimator();
         itemAnimator.setSupportsChangeAnimations(false);
 //        rvMenuEventSetList.setItemAnimator(itemAnimator);
         mEventSetAdapter = new EventSetAdapter(this, mEventSets);
 //        rvMenuEventSetList.setAdapter(mEventSetAdapter);
+=======
+        rvMenuEventSetList.setLayoutManager(manager);
+        DefaultItemAnimator itemAnimator = new DefaultItemAnimator();
+        itemAnimator.setSupportsChangeAnimations(false);
+        rvMenuEventSetList.setItemAnimator(itemAnimator);
+        mEventSetAdapter = new EventSetAdapter(this, mEventSets);
+        rvMenuEventSetList.setAdapter(mEventSetAdapter);
+>>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
     }
 
     private void initUi() {

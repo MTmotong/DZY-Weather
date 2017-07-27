@@ -24,6 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+<<<<<<< HEAD
             <!--<ImageButton-->
                 <!--android:id="@+id/ivMainMenu"-->
                 <!--android:layout_width="@dimen/action_bar_height"-->
@@ -31,6 +32,15 @@
                 <!--android:layout_marginLeft="5dp"-->
                 <!--android:background="@color/colorTranslate"-->
                 <!--android:src="@drawable/btn_menu"/>-->
+=======
+            <ImageButton
+                android:id="@+id/ivMainMenu"
+                android:layout_width="@dimen/action_bar_height"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:background="@color/colorTranslate"
+                android:src="@drawable/btn_menu"/>
+>>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
 
             <LinearLayout
                 android:id="@+id/llTitleDate"

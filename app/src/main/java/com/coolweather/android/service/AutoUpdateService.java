@@ -33,11 +33,18 @@ public class AutoUpdateService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
+<<<<<<< HEAD
         Log.d("TAG", "onStartCommand: S");
         updateWeather();
         updateBingPic();
         AlarmManager manager = (AlarmManager) getSystemService(ALARM_SERVICE);
         int anHour = 20 * 60 * 1000; // 这是20min的毫秒数
+=======
+        updateWeather();
+        updateBingPic();
+        AlarmManager manager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        int anHour = 8 * 60 * 60 * 1000; // 这是8小时的毫秒数
+>>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
         long triggerAtTime = SystemClock.elapsedRealtime() + anHour;
         Intent i = new Intent(this, AutoUpdateService.class);
         PendingIntent pi = PendingIntent.getService(this, 0, i, 0);

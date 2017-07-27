@@ -6,6 +6,7 @@
 ##
 ##############################################################################
 
+<<<<<<< HEAD
 # Attempt to set APP_HOME
 # Resolve links: $0 may be a link
 PRG="$0"
@@ -23,13 +24,20 @@ SAVED="`pwd`"
 cd "`dirname \"$PRG\"`/" >/dev/null
 APP_HOME="`pwd -P`"
 cd "$SAVED" >/dev/null
+=======
+# Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
+DEFAULT_JVM_OPTS=""
+>>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
 
 APP_NAME="Gradle"
 APP_BASE_NAME=`basename "$0"`
 
+<<<<<<< HEAD
 # Add default JVM options here. You can also use JAVA_OPTS and GRADLE_OPTS to pass JVM options to this script.
 DEFAULT_JVM_OPTS=""
 
+=======
+>>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
 # Use the maximum available, or set MAX_FD != -1 to use that value.
 MAX_FD="maximum"
 
@@ -48,7 +56,10 @@ die ( ) {
 cygwin=false
 msys=false
 darwin=false
+<<<<<<< HEAD
 nonstop=false
+=======
+>>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
 case "`uname`" in
   CYGWIN* )
     cygwin=true
@@ -59,11 +70,34 @@ case "`uname`" in
   MINGW* )
     msys=true
     ;;
+<<<<<<< HEAD
   NONSTOP* )
     nonstop=true
     ;;
 esac
 
+=======
+esac
+
+# Attempt to set APP_HOME
+# Resolve links: $0 may be a link
+PRG="$0"
+# Need this for relative symlinks.
+while [ -h "$PRG" ] ; do
+    ls=`ls -ld "$PRG"`
+    link=`expr "$ls" : '.*-> \(.*\)$'`
+    if expr "$link" : '/.*' > /dev/null; then
+        PRG="$link"
+    else
+        PRG=`dirname "$PRG"`"/$link"
+    fi
+done
+SAVED="`pwd`"
+cd "`dirname \"$PRG\"`/" >/dev/null
+APP_HOME="`pwd -P`"
+cd "$SAVED" >/dev/null
+
+>>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
 CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
 
 # Determine the Java command to use to start the JVM.
@@ -89,7 +123,11 @@ location of your Java installation."
 fi
 
 # Increase the maximum file descriptors if we can.
+<<<<<<< HEAD
 if [ "$cygwin" = "false" -a "$darwin" = "false" -a "$nonstop" = "false" ] ; then
+=======
+if [ "$cygwin" = "false" -a "$darwin" = "false" ] ; then
+>>>>>>> 6a0614a167bcc4c7a59bbd057fd13be96052bae3
     MAX_FD_LIMIT=`ulimit -H -n`
     if [ $? -eq 0 ] ; then
         if [ "$MAX_FD" = "maximum" -o "$MAX_FD" = "max" ] ; then
